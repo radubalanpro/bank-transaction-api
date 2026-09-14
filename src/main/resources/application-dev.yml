@@ -1,0 +1,26 @@
+spring:
+  profiles:
+    active: dev
+  
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank_api?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: bank_user
+    password: bank_password
+  
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8180/realms/bank-realm
+          jwk-set-uri: http://localhost:8180/realms/bank-realm/protocol/openid-connect/certs
+
+logging:
+  level:
+    root: INFO
+    ro.example.bankapi: DEBUG
+    org.springframework.security: INFO
+    org.springframework.web: DEBUG
+    org.flywaydb: INFO
+
+server:
+  port: 8080

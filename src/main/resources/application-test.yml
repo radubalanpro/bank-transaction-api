@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:tc:mysql:8.0.35:///testdb
+    username: test
+    password: test
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  
+  flyway:
+    enabled: true
+
+logging:
+  level:
+    root: WARN
+    ro.example.bankapi: INFO
+
+server:
+  port: 0
